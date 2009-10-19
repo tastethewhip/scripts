@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#comando
+ssh \
+-L 5904:cal4.prod.meteologica.com:5900 \
+-L 5905:cal0.prod.meteologica.com:5900 \
+-L 5908:gis2.prod.meteologica.com:5900 \
+-L 5909:eolo1.prod.meteologica.com:5900 \
+-L 5903:rambo2.prod.meteologica.com:5902 \
+-L 5910:cal1.telvent.meteologica.com:5900 \
+-L 5912:cal2.telvent.meteologica.com:5900 \
+-L 5911:cal3.telvent.meteologica.com:5900 \
+-L 2222:gregal.prod.meteologica.com:22 \
+-L 2223:isp.prod.meteologica.com:22 \
+-L 2224:c3.telvent.meteologica.com:22 \
+-L 2225:isp.telvent.meteologica.com:22 \
+-L 7000:gregal.intranet.meteologica.com:80 \
+-L 7001:intranet.meteologica.com:80 \
+-L 143:isp.prod.meteologica.com:143 \
+-L 2525:isp.prod.meteologica.com:25 \
+-L 5433:gregal.intranet.meteologica.com:5432 \
+-L 5434:c3.prod.meteologica.com:5432 \
+-L 5435:c3.telvent.meteologica.com:5432 \
+-L 888:kvmip.meteologica.com:888 \
+-L 889:intranet.meteologica.com:80 \
+-L 2220:fabio.intranet.meteologica.com:22 \
+root@jazztel.meteologica.com
