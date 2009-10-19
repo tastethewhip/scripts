@@ -17,5 +17,5 @@ foreach my $file (@FileNames) {
         $ficheros .= " $file";
 }
 
-print "ncftpput -u u46335615 -p en4cer2819 copon.es $workpath $ficheros\n";
-$res=`ncftpput -u u46335615 -p en4cer2819 copon.es $workpath $ficheros`;
+print "ncftpput -u u46335615 -p XXXXlarga copon.es $workpath $ficheros\n";
+$res=`ncftpput -u u46335615 -p XXXXlarga copon.es $workpath $ficheros`;
