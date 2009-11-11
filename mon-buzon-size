@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# Monitor de tamanio de los buzones de correo
+#
+# author: Fabio Rueda <fabio@meteologica.es> 
+#
+# description: Lista la carpeta /var/data1/var/spool/mail
+#
+
+HOMEDIR=/var/data1/var/spool/mail
+DATO_ACTUAL=0
+
+# Source function library.
+. /etc/ha.d/shellfuncs
+
+#echo $MAQUINA
+
+if [ -d $HOMEDIR ];then
+	cd $HOMEDIR
+else
+	echo "CRITICAL: $HOMEDIR no esta montado en la maquina $MAQUINA"
+	exit 2
+fi
+
+for USUARIO in $(ls $HOMEDIR);do
+	if [ -f $USUARIO ];then
+		FILESIZE=$(du -b $USUARIO|cut -f1)
+		if [ $FILESIZE -gt 1932735283 ];then
+			FILESIZE_HUMANO=$(du -sh $j|cut -f1)
+			echo "El buzon del usuario $USUARIO esta cerca del limite de 2G ($FILESIZE_HUMANO)" > "/tmp/mens-buzon.txt"
+			mime_mail -f "/tmp/mens-buzon.txt" -s "Por favor vacie su buzon" -u "$USUARIO@meteologica.es,incidencias@meteologica.es"
+			rm -f "/tmp/mens.txt"
+		fi
+	fi
+done
+	
+
+
+
+#DATO_ACTUAL=$(smbclient -N -D "$SPOOLDIR" -c "ls" //$MAQUINA/d 2>/dev/null| wc -l )
+#DATO_ACTUAL=$(expr $DATO_ACTUAL - 4)
+#if [ $DATO_ACTUAL -lt 0 ]; then
+#	exit 3
+#elif [ $DATO_ACTUAL -lt $NUM_FICHEROS_WARNING ]; then
+#	echo "OK: $DATO_ACTUAL ficheros en d:/c3envios/var/spool"
+#	exit 0
+#elif [ $DATO_ACTUAL -lt $NUM_FICHEROS_CRITICAL ]; then
+#	echo "WARNING: $DATO_ACTUAL ficheros en d:/c3envios/var/spool"
+#	exit 1
+#else
+#	echo "CRITICAL: $DATO_ACTUAL ficheros en d:/c3envios/var/spool"
+#	exit 2
+#fi	
+#
