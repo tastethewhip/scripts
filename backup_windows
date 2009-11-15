@@ -1,0 +1,2 @@
+#!/bin/bash
+dd if=/dev/sda2 of=/opt/windows.sda2.dd
