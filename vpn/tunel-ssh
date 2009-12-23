@@ -23,5 +23,5 @@ ssh \
 -L 5435:c3.telvent.meteologica.com:5432 \
 -L 888:kvmip.meteologica.com:888 \
 -L 889:intranet.meteologica.com:80 \
--L 2220:fabio.intranet.meteologica.com:22 \
+-L 2220:fa-work.intranet.meteologica.com:22 \
 root@jazztel.meteologica.com
