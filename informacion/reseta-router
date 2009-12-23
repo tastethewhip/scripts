@@ -1,0 +1,7 @@
+si jodo algo
+http://wiki.openwrt.org/oldwiki/openwrtdocs/troubleshooting
+pillo una ip 192.168.1.X
+tira un udp y lo capturo con "nc -l  -p 4919 -u"
+y aprieto el boton del reset todo esto haciendo ping s 192.168.1.1
+luego telnet 192.168.1.1
+reseteo la configuracion con "mtd -r erase rootfs_data"
