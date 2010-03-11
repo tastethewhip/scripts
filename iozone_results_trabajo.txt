@@ -1,0 +1,217 @@
+	Iozone: Performance Test of File I/O
+	        Version $Revision: 3.308 $
+		Compiled for 64 bit mode.
+		Build: linux 
+
+	Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins
+	             Al Slater, Scott Rhine, Mike Wisner, Ken Goss
+	             Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,
+	             Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,
+	             Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy,
+	             Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root.
+
+	Run began: Thu Mar 11 09:50:26 2010
+
+	Excel chart generation enabled
+	Record Size 4 KB
+	File size set to 102400 KB
+	Command line used: iozone -R -l 5 -u 5 -r 4k -s 100m -F /home/f1 /home/f2 /home/f3 /home/f4 /home/f5
+	Output is in Kbytes/sec
+	Time Resolution = 0.000001 seconds.
+	Processor cache size set to 1024 Kbytes.
+	Processor cache line size set to 32 bytes.
+	File stride size set to 17 * record size.
+	Min process = 5 
+	Max process = 5 
+	Throughput test with 5 processes
+	Each process writes a 102400 Kbyte file in 4 Kbyte records
+	Iozone: Performance Test of File I/O
+	        Version $Revision: 3.308 $
+		Compiled for 64 bit mode.
+		Build: linux 
+
+	Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins
+	             Al Slater, Scott Rhine, Mike Wisner, Ken Goss
+	             Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,
+	             Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,
+	             Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy,
+	             Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root.
+
+	Run began: Thu Mar 11 09:50:39 2010
+
+	Excel chart generation enabled
+	Record Size 4 KB
+	File size set to 102400 KB
+	Command line used: iozone -R -l 5 -u 5 -r 4k -s 100m -F /home/f1 /home/f2 /home/f3 /home/f4 /home/f5
+	Output is in Kbytes/sec
+	Time Resolution = 0.000001 seconds.
+	Processor cache size set to 1024 Kbytes.
+	Processor cache line size set to 32 bytes.
+	File stride size set to 17 * record size.
+	Min process = 5 
+	Max process = 5 
+	Throughput test with 5 processes
+	Each process writes a 102400 Kbyte file in 4 Kbyte records
+
+	Children see throughput for  5 initial writers 	=   71309.88 KB/sec
+	Parent sees throughput for  5 initial writers 	=   32706.96 KB/sec
+	Min throughput per process 			=   11411.13 KB/sec 
+	Max throughput per process 			=   20913.26 KB/sec
+	Avg throughput per process 			=   14261.98 KB/sec
+	Min xfer 					=   59456.00 KB
+
+	Children see throughput for  5 rewriters 	=   86950.59 KB/sec
+	Parent sees throughput for  5 rewriters 	=   44803.00 KB/sec
+	Min throughput per process 			=    9161.74 KB/sec 
+	Max throughput per process 			=   29593.11 KB/sec
+	Avg throughput per process 			=   17390.12 KB/sec
+	Min xfer 					=   49836.00 KB
+
+	Children see throughput for  5 readers 		= 1011111.08 KB/sec
+	Parent sees throughput for  5 readers 		=  953942.58 KB/sec
+	Min throughput per process 			=  192235.94 KB/sec 
+	Max throughput per process 			=  215212.83 KB/sec
+	Avg throughput per process 			=  202222.22 KB/sec
+	Min xfer 					=   96816.00 KB
+
+	Children see throughput for 5 re-readers 	=  853297.70 KB/sec
+	Parent sees throughput for 5 re-readers 	=  813761.14 KB/sec
+	Min throughput per process 			=  165356.62 KB/sec 
+	Max throughput per process 			=  177880.30 KB/sec
+	Avg throughput per process 			=  170659.54 KB/sec
+	Min xfer 					=   87700.00 KB
+	Iozone: Performance Test of File I/O
+	        Version $Revision: 3.308 $
+		Compiled for 64 bit mode.
+		Build: linux 
+
+	Contributors:William Norcott, Don Capps, Isom Crawford, Kirby Collins
+	             Al Slater, Scott Rhine, Mike Wisner, Ken Goss
+	             Steve Landherr, Brad Smith, Mark Kelly, Dr. Alain CYR,
+	             Randy Dunlap, Mark Montague, Dan Million, Gavin Brebner,
+	             Jean-Marc Zucconi, Jeff Blomberg, Benny Halevy,
+	             Erik Habbinga, Kris Strecker, Walter Wong, Joshua Root.
+
+	Run began: Thu Mar 11 09:57:29 2010
+
+	Excel chart generation enabled
+	Record Size 4 KB
+	File size set to 102400 KB
+	Command line used: iozone -R -l 5 -u 5 -r 4k -s 100m -F /home/f1 /home/f2 /home/f3 /home/f4 /home/f5
+	Output is in Kbytes/sec
+	Time Resolution = 0.000001 seconds.
+	Processor cache size set to 1024 Kbytes.
+	Processor cache line size set to 32 bytes.
+	File stride size set to 17 * record size.
+	Min process = 5 
+	Max process = 5 
+	Throughput test with 5 processes
+	Each process writes a 102400 Kbyte file in 4 Kbyte records
+
+	Children see throughput for  5 initial writers 	=   59800.25 KB/sec
+	Parent sees throughput for  5 initial writers 	=   37783.38 KB/sec
+	Min throughput per process 			=    9963.89 KB/sec 
+	Max throughput per process 			=   13917.32 KB/sec
+	Avg throughput per process 			=   11960.05 KB/sec
+	Min xfer 					=   86380.00 KB
+
+	Children see throughput for  5 rewriters 	=   72082.33 KB/sec
+	Parent sees throughput for  5 rewriters 	=   43493.95 KB/sec
+	Min throughput per process 			=   10335.69 KB/sec 
+	Max throughput per process 			=   18780.83 KB/sec
+	Avg throughput per process 			=   14416.47 KB/sec
+	Min xfer 					=   72472.00 KB
+
+	Children see throughput for  5 readers 		= 1121715.41 KB/sec
+	Parent sees throughput for  5 readers 		= 1053518.29 KB/sec
+	Min throughput per process 			=  214819.56 KB/sec 
+	Max throughput per process 			=  235404.67 KB/sec
+	Avg throughput per process 			=  224343.08 KB/sec
+	Min xfer 					=   89308.00 KB
+
+	Children see throughput for 5 re-readers 	=  689562.52 KB/sec
+	Parent sees throughput for 5 re-readers 	=  669332.00 KB/sec
+	Min throughput per process 			=  133924.77 KB/sec 
+	Max throughput per process 			=  147625.70 KB/sec
+	Avg throughput per process 			=  137912.50 KB/sec
+	Min xfer 					=   93980.00 KB
+
+	Children see throughput for 5 reverse readers 	=  601153.02 KB/sec
+	Parent sees throughput for 5 reverse readers 	=  578511.10 KB/sec
+	Min throughput per process 			=  115163.16 KB/sec 
+	Max throughput per process 			=  122910.30 KB/sec
+	Avg throughput per process 			=  120230.60 KB/sec
+	Min xfer 					=   87856.00 KB
+
+	Children see throughput for 5 stride readers 	=  565714.23 KB/sec
+	Parent sees throughput for 5 stride readers 	=  547654.81 KB/sec
+	Min throughput per process 			=  110217.26 KB/sec 
+	Max throughput per process 			=  115833.98 KB/sec
+	Avg throughput per process 			=  113142.85 KB/sec
+	Min xfer 					=   91932.00 KB
+
+	Children see throughput for 5 random readers 	=  732731.91 KB/sec
+	Parent sees throughput for 5 random readers 	=  693433.25 KB/sec
+	Min throughput per process 			=  143349.95 KB/sec 
+	Max throughput per process 			=  149398.28 KB/sec
+	Avg throughput per process 			=  146546.38 KB/sec
+	Min xfer 					=   86892.00 KB
+
+	Children see throughput for 5 mixed workload 	=  494785.95 KB/sec
+	Parent sees throughput for 5 mixed workload 	=    8906.91 KB/sec
+	Min throughput per process 			=   68891.95 KB/sec 
+	Max throughput per process 			=  125014.34 KB/sec
+	Avg throughput per process 			=   98957.19 KB/sec
+	Min xfer 					=   56272.00 KB
+
+	Children see throughput for 5 random writers 	=    5497.31 KB/sec
+	Parent sees throughput for 5 random writers 	=    2414.51 KB/sec
+	Min throughput per process 			=     750.20 KB/sec 
+	Max throughput per process 			=    1434.32 KB/sec
+	Avg throughput per process 			=    1099.46 KB/sec
+	Min xfer 					=   70300.00 KB
+
+	Children see throughput for 5 pwrite writers 	=   66443.83 KB/sec
+	Parent sees throughput for 5 pwrite writers 	=   35742.62 KB/sec
+	Min throughput per process 			=   10303.98 KB/sec 
+	Max throughput per process 			=   17260.24 KB/sec
+	Avg throughput per process 			=   13288.77 KB/sec
+	Min xfer 					=   72188.00 KB
+
+	Children see throughput for 5 pread readers 	=  841754.50 KB/sec
+	Parent sees throughput for 5 pread readers 	=  719322.72 KB/sec
+	Min throughput per process 			=  159247.42 KB/sec 
+	Max throughput per process 			=  181813.05 KB/sec
+	Avg throughput per process 			=  168350.90 KB/sec
+	Min xfer 					=   78244.00 KB
+
+
+
+"Throughput report Y-axis is type of test X-axis is number of processes"
+"Record size = 4 Kbytes "
+"Output is in Kbytes/sec"
+
+"  Initial write "   59800.25 
+
+"        Rewrite "   72082.33 
+
+"           Read " 1121715.41 
+
+"        Re-read "  689562.52 
+
+"   Reverse Read "  601153.02 
+
+"    Stride read "  565714.23 
+
+"    Random read "  732731.91 
+
+" Mixed workload "  494785.95 
+
+"   Random write "    5497.31 
+
+"         Pwrite "   66443.83 
+
+"          Pread "  841754.50 
+
+
+iozone test complete.
