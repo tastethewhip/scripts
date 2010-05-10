@@ -1,0 +1,1 @@
+*/1 * * * *     root grep -v router /etc/hosts > /tmp/hosts;i=$(ip route list match 0.0.0.0/0 | cut -d " " -f 3) ;echo "$i    router" >>/tmp/hosts;sudo mv -f /tmp/hosts /etc/hosts
