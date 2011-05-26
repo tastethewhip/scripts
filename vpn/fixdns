@@ -1,0 +1,105 @@
+#!/bin/bash
+
+#
+# $Id: fixdns 21 2010-11-18 09:37:16Z deploy $
+#
+# Recursive/Caching Nameservers
+#
+# nsc-dl1 72.249.191.254 - Dallas, Standard Network
+# nsc-dl2 206.123.113.254 - Dallas, Premium Network
+# nsc-ny1 66.199.228.254 - New York
+# nsc-ln1 92.48.122.126 - London 
+# nsc-au1 122.100.15.254 - Australia
+
+conf="/etc/resolv.conf"
+bad_nameservers=(
+206.123.64.245
+206.123.69.4
+72.29.96.250
+207.210.212.202
+72.249.0.34
+206.123.69.254
+66.199.228.130
+206.123.113.132
+207.99.0.41
+207.99.0.42
+207.99.0.1
+207.99.0.2
+66.199.235.50
+72.9.108.146
+210.56.80.56 
+202.60.64.6 
+203.25.185.119 
+202.60.64.7
+4.2.2.2
+4.2.2.1
+) 
+
+au_nameservers="122.100.15.254 72.249.191.254"
+ln_nameservers="92.48.122.126 72.249.191.254 66.199.228.254"
+ny_nameservers="66.199.228.254 72.249.191.254 92.48.122.126"
+dl_nameservers="72.249.191.254 206.123.113.254 66.199.228.254 92.48.122.126"
+
+ny_ranges="63. 66.199. 72.9. 216."
+ln_ranges="85. 94. 217. 92."
+au_ranges="202. 122. 117."
+
+eth0=$(/sbin/ifconfig eth0 | grep 'inet addr' | cut -f2 -d: | awk '{print $1}')
+
+[ -e $conf ] || exit 1
+old="/etc/$(basename $conf).rimu-$$"
+cp $conf $old
+
+for dc in ny ln au; do 
+	eval ranges=\$\{${dc}_ranges\}
+	for range in $ranges; do
+		if [ $(echo $eth0 | grep -c ^$range) -gt 0 ]; then
+			eval good_nameservers=\$\{${dc}_nameservers\}
+			break
+		fi
+	done
+	[ -n "$good_nameservers" ] && break
+done
+
+[ -z "$good_nameservers" ] && good_nameservers=$dl_nameservers
+
+good_nameservers=($(echo "$good_nameservers"))
+
+[ -e $conf ] || exit 1
+
+count=0
+for ((i=0;i<${#bad_nameservers[@]};i++)); do
+	ns=${bad_nameservers[$i]}
+	if [ $(grep -c "^nameserver $ns" $conf) -gt 0 ]; then
+		sed s/"^nameserver $ns"/"#nameserver $ns"/g --in-place $conf
+		if [ $? -ne 0 ]; then
+			exit 1
+		fi
+		((count++))
+	fi
+done
+
+# If there is less than 2 nameservers listed in resolv.conf, and we're going to add less than 2
+if [ $(grep -c '^nameserver' $conf) -lt 2 -a ${count} -lt 2 ]; then
+	count=2
+fi
+
+[ $count -eq 0 ] && exit 0
+
+for ((i=0;i<$count;i++)); do
+	for ((j=0;j<${#good_nameservers[@]};j++)); do
+		ns=${good_nameservers[$j]}
+		if [ $(grep -c "^nameserver $ns" $conf) -eq 0 ]; then
+			echo "nameserver $ns" >> $conf
+			break
+		fi
+	done
+done
+
+cat $conf
+diff $old $conf
+#rm -f $old
+echo "Checking your current name servers:"
+nameservers=$(cat /etc/resolv.conf | grep '^nameserver' | awk '{print $2}')
+for i in $nameservers; do host google.com $i 2>&1 | grep -qai 'has address' || { echo "$i in /etc/resolv.conf is not working.  Remove it?"; continue; }; echo $i is working; done
+exit 0

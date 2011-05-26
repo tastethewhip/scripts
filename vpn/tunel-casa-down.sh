@@ -1,6 +1,5 @@
 #!/bin/sh
 
-cp -pf /etc/resolv.orig /etc/resolv.conf
-#cp -pf resolv-tinel.conf /etc/resolv.conf
-/etc/init.d/openvpn stop
+/etc/init.d/openvpn stop && cat $(dirname $0)/dns-casa | resolvconf -a eth1
+
 
