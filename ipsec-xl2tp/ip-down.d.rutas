@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# PPP up hook script for resolvconf
+#
+# Reconfigures resolver to take into account
+# the appearance of the ppp interface
+#
+# Licensed under the GNU GPL.  See /usr/share/common-licenses/GPL.
+#
+# History
+# June 2003: Written by Thomas Hood <jdthood@yahoo.co.uk>
+
+ip ro del 10.10.223.0/24 via $IPREMOTE dev $IFNAME
+ip ro del 10.10.225.0/24 via $IPREMOTE dev $IFNAME
+ip ro del 172.20.0.0/21 via $IPREMOTE dev $IFNAME
+#ip ro del default via $IPREMOTE dev $IFNAME
