@@ -20,10 +20,12 @@ IPREMOTE=`./getip.sh $IFNAME`
 
 
 echo ip ro add 10.10.223.0/24 via $IPREMOTE dev $IFNAME
+echo ip ro add 10.10.151.0/24 via $IPREMOTE dev $IFNAME
 echo ip ro add 10.10.225.0/24 via $IPREMOTE dev $IFNAME
 echo ip ro add 172.20.0.0/21 via $IPREMOTE dev $IFNAME
 
 ip ro add 10.10.223.0/24 via $IPREMOTE dev $IFNAME
+ip ro add 10.10.151.0/24 via $IPREMOTE dev $IFNAME
 ip ro add 10.10.225.0/24 via $IPREMOTE dev $IFNAME
 ip ro add 172.20.0.0/21 via $IPREMOTE dev $IFNAME
 
